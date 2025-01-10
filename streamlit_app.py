@@ -34,10 +34,11 @@ if st.button("Send"):
         st.warning("Please enter a valid message!")
     else:
         try:
-            response = requests.post(
-                "http://127.0.0.1:5000/chat",
-                json={"message": user_input}
-            )
+           response = requests.post(
+    "https://730e-103-97-242-255.ngrok-free.app/chat",
+    json={"message": user_input}
+)
+
             if response.status_code == 200:
                 bot_response = response.json().get("response", "No response received.")
                 st.markdown("### 🤖 Chatbot's Response:")
